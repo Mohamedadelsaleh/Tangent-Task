@@ -1,0 +1,15 @@
+// components/Products.module.scss
+.productsGrid {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    padding: 20px;
+    width: 100%;
+  }
+  
+  @media screen and (min-width: 320px) and (max-width: 479px) {
+    .productsGrid {
+      padding: 10px;
+    }
+  }
+  

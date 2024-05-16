@@ -1,0 +1,33 @@
+.container {
+  padding: 0 6rem;
+  padding-top: 80px;
+}
+
+.main {
+  min-height: 100vh;
+  padding: 4rem 0;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.title {
+  margin: 0;
+  line-height: 1.15;
+  font-size: 4rem;
+  text-align: center;
+}
+
+@media screen and (min-width: 480px) and (max-width: 1300px) {
+  .container {
+    padding:0 2rem;
+  }
+}
+
+@media screen and (min-width: 320px) and (max-width: 479px) {
+  .container {
+    padding: 0;
+  }
+}
