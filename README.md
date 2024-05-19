@@ -21,7 +21,7 @@
 
 ## Live Demo
 
-[Shopping-Cart-App-Link](https://lyriks-musical-app.netlify.app/)
+[Shopping-Cart-App-Link](https://tangent-task.vercel.app/)
 
 
 ## Setup
