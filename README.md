@@ -26,12 +26,17 @@
 
 ## Setup
 
-Install the main source of project :
+Install the main source of the project :
 
 After downloading project files open them in your IDE then in open Terminal:
 
 ```bash
-npm install
+npm install 
+```
+
+Then
+
+```bash
 npm run dev 
 ```
 
