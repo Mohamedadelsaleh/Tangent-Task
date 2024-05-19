@@ -26,9 +26,9 @@
 
 ## Setup
 
-Install main source of project :
+Install the main source of project :
 
-After downloading project files open it in your IDE then in open Termianl:
+After downloading project files open them in your IDE then in open Terminal:
 
 ```bash
 npm install
@@ -38,13 +38,14 @@ npm run dev
 
 ## OpenSourse
 
-  It's an opensource project You can edit on it and develop what you want .
+  It's an open-source project You can edit on it and develop what you want.
 
 
 ## Pictures
 
 ![screencapture-localhost-3000-2024-05-19-04_43_50](https://github.com/Mohamedadelsaleh/Tangent-Task/assets/26310663/491fe0cb-0d88-4ccb-ae76-b1535aa04112)
-![Uploading screencapture-localhost-3000-cart-2024-05-19-04_44_21.png…]
+![screencapture-localhost-3000-cart-2024-05-19-04_44_21](https://github.com/Mohamedadelsaleh/Tangent-Task/assets/26310663/38b6f383-e97d-43c0-a2cd-4a69dda64f38)
+
 
 ## Authors
 * [Mohamed Adel Salah Gouda](https://github.com/Mohamedadelsaleh)
