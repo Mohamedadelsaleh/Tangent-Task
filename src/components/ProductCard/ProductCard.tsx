@@ -18,13 +18,14 @@ const ProductCard: React.FC<ProductCardProps> = ({
   thumbnail,
 }) => {
 
-  const { dispatch } = useCart();
+  const { dispatch, showNotification } = useCart();
 
   const addToCart = () => {
     dispatch({
       type: 'ADD_ITEM',
       product: { id, title, description, price, thumbnail }
     });
+    showNotification('Item has been added successfully', 'success', '/assets/done-ring.svg');
   };
 
   return (
@@ -39,7 +40,8 @@ const ProductCard: React.FC<ProductCardProps> = ({
         <div className={styles.cardFooterWrapper}>
           <button onClick={addToCart} className={styles.addToCartButton}> 
             <span>Add to cart</span>
-            <img src="/assets/plus.svg"  /> </button>
+            <img src="/assets/plus.svg" alt="plusIcon" /> 
+          </button>
           <div className={styles.priceWrapper}>
             <p className={styles.productPrice}>{`£${price.toFixed(2)}`}</p>
           </div>

@@ -1,13 +1,8 @@
 // context/CartContext.tsx
-import React, { createContext, useContext, useReducer, ReactNode } from 'react';
+import Notification from '@/components/Notification/Notification';
+import { Product } from '@/services/services';
+import React, { createContext, useContext, useReducer, ReactNode, useState } from 'react';
 
-interface Product {
-    id: number;
-    title: string;
-    description: string;
-    price: number;
-    thumbnail: string;
-}
 
 interface CartItem extends Product {
     quantity: number;
@@ -26,6 +21,7 @@ type CartAction =
 const CartContext = createContext<{
     state: CartState;
     dispatch: React.Dispatch<CartAction>;
+    showNotification: (message: string, type?: 'success' | 'error', icon?: string) => void;
 } | undefined>(undefined);
 
 const cartReducer = (state: CartState, action: CartAction): CartState => {
@@ -79,18 +75,27 @@ const cartReducer = (state: CartState, action: CartAction): CartState => {
 
 export const CartProvider = ({ children }: { children: ReactNode }) => {
     const [state, dispatch] = useReducer(cartReducer, { items: [] });
+    const [notification, setNotification] = useState<{ message: string; icon?: string; type?: 'success' | 'error' } | null>(null);
 
+    const showNotification = (message: string, type: 'success' | 'error' = 'success', icon?: string) => {
+        setNotification({ message, type, icon });
+        setTimeout(() => setNotification(null), 3000);
+    };
+  
     return (
-        <CartContext.Provider value={{ state, dispatch }}>
-        {children}
+        <CartContext.Provider value={{ state, dispatch, showNotification }}>
+            {children}
+            {notification && (
+                <Notification message={notification.message} visible={true} type={notification.type} icon={notification.icon} />
+            )}
         </CartContext.Provider>
     );
 };
-
+  
 export const useCart = () => {
-  const context = useContext(CartContext);
-  if (context === undefined) {
-    throw new Error('useCart must be used within a CartProvider');
-  }
-  return context;
+    const context = useContext(CartContext);
+    if (context === undefined) {
+        throw new Error('useCart must be used within a CartProvider');
+    }
+    return context;
 };

@@ -13,7 +13,6 @@ export default function Home() {
       </Head>
       
       <main className={styles.main}>
-        <h2> Welcome</h2>
         <Products />
       </main>
     </div>
